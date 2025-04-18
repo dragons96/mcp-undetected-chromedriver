@@ -2,6 +2,59 @@
 
 基于undetected-chromedriver构建的MCP服务，提供一套完整的接口用于自动化控制Chrome浏览器，绕过反爬虫检测。
 
+## 安装
+
+使用 [Smithery](https://smithery.ai/server/@dragons96/mcp-undetected-chromedriver) 为claude安装mcp-undetected-chromedriver服务:
+
+```bash
+npx -y @smithery/cli install @dragons96/mcp-undetected-chromedriver --client claude
+```
+
+## 配置使用Undetected Chromedriver服务
+
+calude配置实例:
+
+```json
+{
+  "mcpServers": {
+    "mcp-undetected-chromedriver": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@smithery/cli@latest",
+        "run",
+        "@dragons96/mcp-undetected-chromedriver",
+        "--config",
+        "{}"
+      ]
+    }
+  }
+}
+```
+
+
+### 环境要求
+
+- Python >= 3.11
+- Chrome浏览器
+
+### 使用uv安装
+
+```bash
+# 创建虚拟环境
+uv venv
+
+# 激活虚拟环境
+# Windows
+.venv\Scripts\activate
+# Linux/MacOS
+source .venv/bin/activate
+
+# 安装依赖
+uv pip install -e .
+```
+
+
 ## 项目介绍
 
 MCP-Undetected-Chromedriver 是一个MCP (Multi Channel Protocol) 服务，它将undetected-chromedriver库的功能封装为一系列易于使用的API。该项目适合需要在自动化测试、数据抓取或网页自动化脚本中绕过现代网站反爬虫检测机制的场景。
@@ -46,29 +99,6 @@ git clone git@github.com:dragons96/mcp-undetected-chromedriver.git
      }
    }
    ```
-
-## 安装
-
-### 环境要求
-
-- Python >= 3.11
-- Chrome浏览器
-
-### 使用uv安装
-
-```bash
-# 创建虚拟环境
-uv venv
-
-# 激活虚拟环境
-# Windows
-.venv\Scripts\activate
-# Linux/MacOS
-source .venv/bin/activate
-
-# 安装依赖
-uv pip install -e .
-```
 
 ## 使用方法
 
