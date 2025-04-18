@@ -6,7 +6,8 @@ An MCP service built on undetected-chromedriver, providing a comprehensive inter
 
 [中文文档](README_ZH.md)
 
-## Installing via Smithery
+## Installation
+
 
 To install MCP-Undetected-Chromedriver for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@dragons96/mcp-undetected-chromedriver):
 
@@ -14,27 +15,28 @@ To install MCP-Undetected-Chromedriver for Claude Desktop automatically via [Smi
 npx -y @smithery/cli install @dragons96/mcp-undetected-chromedriver --client claude
 ```
 
-## Project Introduction
+## Configuration to use Undetected Chromedriver Server
 
-MCP-Undetected-Chromedriver is an MCP (Multi Channel Protocol) service that wraps the functionality of the undetected-chromedriver library into a series of easy-to-use APIs. This project is particularly suitable for scenarios that require bypassing modern website anti-bot detection mechanisms in automated testing, data scraping, or web automation scripts.
+Here's the Claude Desktop configuration to use the Undetected-chromedriver server:
 
-### Key Features
+```json
+{
+  "mcpServers": {
+    "mcp-undetected-chromedriver": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@smithery/cli@latest",
+        "run",
+        "@dragons96/mcp-undetected-chromedriver",
+        "--config",
+        "{}"
+      ]
+    }
+  }
+}
+```
 
-- Based on undetected-chromedriver, effectively bypassing website anti-bot detection
-- Provides rich browser operation API interfaces
-- Supports screenshots, PDF export, and other functionalities
-- Supports complex page interaction operations such as clicking, form filling, dragging, etc.
-- Seamlessly integrates with other tools in the MCP ecosystem
-
-## Todo List
-
-- [ ] Optimize browser driver management and handle driver interruptions
-- [ ] Extend API capabilities
-- [ ] Add more comprehensive error handling and logging
-- [ ] Improve documentation with more usage examples
-- [ ] Add support for browser profiles and extensions
-
-## Installation
 
 ### Requirements
 
@@ -56,6 +58,26 @@ source .venv/bin/activate
 # Install dependencies
 uv pip install -e .
 ```
+
+## Project Introduction
+
+MCP-Undetected-Chromedriver is an MCP (Multi Channel Protocol) service that wraps the functionality of the undetected-chromedriver library into a series of easy-to-use APIs. This project is particularly suitable for scenarios that require bypassing modern website anti-bot detection mechanisms in automated testing, data scraping, or web automation scripts.
+
+### Key Features
+
+- Based on undetected-chromedriver, effectively bypassing website anti-bot detection
+- Provides rich browser operation API interfaces
+- Supports screenshots, PDF export, and other functionalities
+- Supports complex page interaction operations such as clicking, form filling, dragging, etc.
+- Seamlessly integrates with other tools in the MCP ecosystem
+
+## Todo List
+
+- [ ] Optimize browser driver management and handle driver interruptions
+- [ ] Extend API capabilities
+- [ ] Add more comprehensive error handling and logging
+- [ ] Improve documentation with more usage examples
+- [ ] Add support for browser profiles and extensions
 
 ## Usage
 
