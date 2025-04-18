@@ -130,7 +130,7 @@ client.call("webdriver_close")
 
 ## 许可证
 
-[许可证信息]
+本项目采用MIT许可证 - 查看[LICENSE](LICENSE)文件了解详情。
 
 ## 贡献指南
 
