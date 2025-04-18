@@ -82,22 +82,22 @@ mcp-server-undetected-chromedriver
 
 服务提供以下主要API接口：
 
-- `webdriver_navigate`: 导航到指定URL
-- `webdriver_screenshot`: 截取当前页面截图
-- `webdriver_click`: 点击页面元素
-- `webdriver_iframe_click`: 点击iframe内的元素
-- `webdriver_fill`: 在输入框中填写内容
-- `webdriver_select`: 在下拉选择框中选择选项
-- `webdriver_hover`: 鼠标悬停在元素上
-- `webdriver_evalute`: 执行JavaScript代码
-- `webdriver_close`: 关闭浏览器
-- `webdriver_get_visible_text`: 获取页面可见文本
-- `webdriver_get_visible_html`: 获取页面可见HTML
-- `webdriver_go_back`: 浏览器后退
-- `webdriver_go_forward`: 浏览器前进
-- `webdriver_drag`: 拖拽元素
-- `webdriver_press_key`: 模拟按键
-- `webdriver_save_as_pdf`: 将页面保存为PDF
+- `browser_navigate`: 导航到指定URL
+- `browser_screenshot`: 截取当前页面截图
+- `browser_click`: 点击页面元素
+- `browser_iframe_click`: 点击iframe内的元素
+- `browser_fill`: 在输入框中填写内容
+- `browser_select`: 在下拉选择框中选择选项
+- `browser_hover`: 鼠标悬停在元素上
+- `browser_evalute`: 执行JavaScript代码
+- `browser_close`: 关闭浏览器
+- `browser_get_visible_text`: 获取页面可见文本
+- `browser_get_visible_html`: 获取页面可见HTML
+- `browser_go_back`: 浏览器后退
+- `browser_go_forward`: 浏览器前进
+- `browser_drag`: 拖拽元素
+- `browser_press_key`: 模拟按键
+- `browser_save_as_pdf`: 将页面保存为PDF
 
 ### 代码示例
 
@@ -109,19 +109,19 @@ client = Client()
 client.start("undetected-chromedriver-mcp-server")
 
 # 导航到网站
-response = client.call("webdriver_navigate", {"url": "https://example.com"})
+response = client.call("browser_navigate", {"url": "https://example.com"})
 print(response)
 
 # 截取屏幕截图
-response = client.call("webdriver_screenshot", {"name": "example"})
+response = client.call("browser_screenshot", {"name": "example"})
 print(response)
 
 # 获取页面文本
-response = client.call("webdriver_get_visible_text")
+response = client.call("browser_get_visible_text")
 print(response.content[0].text)
 
 # 关闭浏览器
-client.call("webdriver_close")
+client.call("browser_close")
 ```
 
 ## 工作原理
@@ -144,8 +144,8 @@ A: undetected-chromedriver专门设计用于绕过现代网站的反爬虫检测
 
 **Q: 服务如何处理浏览器实例?**
 
-A: 服务维护一个全局的浏览器实例，当首次调用需要浏览器的API时会自动创建。使用 `webdriver_close`可以显式关闭浏览器。
+A: 服务维护一个全局的浏览器实例，当首次调用需要浏览器的API时会自动创建。使用 `browser_close`可以显式关闭浏览器。
 
 **Q: 如何处理iframe中的元素?**
 
-A: 使用 `webdriver_iframe_click`API可以直接操作iframe内的元素，无需手动切换frame上下文。
+A: 使用 `browser_iframe_click`API可以直接操作iframe内的元素，无需手动切换frame上下文。

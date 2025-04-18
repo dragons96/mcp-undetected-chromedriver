@@ -83,7 +83,7 @@ mcp = FastMCP(
 
 
 @mcp.tool()
-async def webdriver_navigate(url: str, timeout: int = 30000):
+async def browser_navigate(url: str, timeout: int = 30000):
     """Navigate to a URL
 
     Args:
@@ -109,7 +109,7 @@ SCREENSHOTS = {}
 
 
 @mcp.tool()
-async def webdriver_screenshot(
+async def browser_screenshot(
         name: str,
         storeBase64: bool = True,
         downloadsDir: str = None,
@@ -149,7 +149,7 @@ async def webdriver_screenshot(
 
 
 @mcp.tool()
-async def webdriver_click(
+async def browser_click(
         selector: str,
 ):
     """Click an element on the page
@@ -169,7 +169,7 @@ async def webdriver_click(
 
 
 @mcp.tool()
-async def webdriver_iframe_click(
+async def browser_iframe_click(
         iframeSelector: str,
         selector: str,
 ):
@@ -197,7 +197,7 @@ async def webdriver_iframe_click(
 
 
 @mcp.tool()
-async def webdriver_fill(
+async def browser_fill(
         selector: str,
         value: str,
 ):
@@ -220,7 +220,7 @@ async def webdriver_fill(
 
 
 @mcp.tool()
-async def webdriver_select(
+async def browser_select(
         selector: str,
         value: str,
 ):
@@ -244,7 +244,7 @@ async def webdriver_select(
 
 
 @mcp.tool()
-async def webdriver_hover(
+async def browser_hover(
         selector: str,
 ):
     """Hover over an element on the page
@@ -265,7 +265,7 @@ async def webdriver_hover(
 
 
 @mcp.tool()
-async def webdriver_evalute(
+async def browser_evalute(
         script: str,
 ):
     """Evaluate a JavaScript expression in the browser console
@@ -291,14 +291,14 @@ async def webdriver_evalute(
 
 
 @mcp.tool()
-async def webdriver_close():
+async def browser_close():
     """Close the browser and release all resources"""
     await reset_browser_state()
     return await create_success_response("Browser closed successfully")
 
 
 @mcp.tool()
-async def webdriver_get_visible_text():
+async def browser_get_visible_text():
     """Get the visible text of the current page"""
 
     async def get_visible_text_handler(driver: uc.Chrome):
@@ -325,7 +325,7 @@ async def webdriver_get_visible_text():
 
 
 @mcp.tool()
-async def webdriver_get_visible_html():
+async def browser_get_visible_html():
     """Get the HTML of the current page"""
 
     async def get_visible_html_handler(driver: uc.Chrome):
@@ -337,7 +337,7 @@ async def webdriver_get_visible_html():
 
 
 @mcp.tool()
-async def webdriver_go_back():
+async def browser_go_back():
     """Navigate back in browser history"""
 
     async def go_back_handler(driver: uc.Chrome):
@@ -350,7 +350,7 @@ async def webdriver_go_back():
 
 
 @mcp.tool()
-async def webdriver_go_forward():
+async def browser_go_forward():
     """Navigate forward in browser history"""
 
     async def go_forward_handler(driver: uc.Chrome):
@@ -363,7 +363,7 @@ async def webdriver_go_forward():
 
 
 @mcp.tool()
-async def webdriver_drag(
+async def browser_drag(
         sourceSelector: str,
         targetSelector: str,
 ):
@@ -390,7 +390,7 @@ async def webdriver_drag(
 
 
 @mcp.tool()
-async def webdriver_press_key(
+async def browser_press_key(
         key: str,
         selector: str = None,
 ):
@@ -465,7 +465,7 @@ async def webdriver_press_key(
 
 
 @mcp.tool()
-async def webdriver_save_as_pdf(
+async def browser_save_as_pdf(
         outputPath: str,
         filename: str = "page.pdf",
         format: str = 'A4',
