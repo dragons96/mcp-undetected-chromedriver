@@ -26,7 +26,7 @@ class Global:
 
 async def reset_browser_state():
     if Global.webdriver:
-        await Global.webdriver.quit()
+        Global.webdriver.quit()
         Global.webdriver = None
 
 
