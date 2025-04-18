@@ -1,8 +1,18 @@
 # MCP-Undetected-Chromedriver
 
+[![smithery badge](https://smithery.ai/badge/@dragons96/mcp-undetected-chromedriver)](https://smithery.ai/server/@dragons96/mcp-undetected-chromedriver)
+
 An MCP service built on undetected-chromedriver, providing a comprehensive interface for automating Chrome browser control while bypassing anti-bot detection.
 
 [中文文档](README_ZH.md)
+
+## Installing via Smithery
+
+To install MCP-Undetected-Chromedriver for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@dragons96/mcp-undetected-chromedriver):
+
+```bash
+npx -y @smithery/cli install @dragons96/mcp-undetected-chromedriver --client claude
+```
 
 ## Project Introduction
 
